@@ -589,6 +589,7 @@ function runTask {
     RUN_TASK_SUCCESS=false
     every=10
     i=0
+    echo "Checking task status every $every seconds."
     while [ $i -lt $TIMEOUT ]
     do
 
@@ -607,7 +608,7 @@ function runTask {
             break;
         fi
 
-        echo "Checking task status every $every seconds. Status: $TASK_STATUS"
+        echo "Status: $TASK_STATUS"
 
         sleep $every
         i=$(( $i + $every ))
